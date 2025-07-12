@@ -2,7 +2,7 @@ export 'package:get/get_navigation/src/routes/get_route.dart';
 export 'package:get/get_navigation/src/routes/transitions_type.dart';
 export 'package:grocery/bindings/auth_binding.dart';
 export 'package:grocery/routes/app_pages.dart';
-export 'package:grocery/views/auth/splash_screen.dart';
+export 'package:grocery/views/auth/splash/splash_screen.dart';
 export 'package:grocery/views/core/home/home_page.dart';
 
 export 'package:flutter/material.dart';

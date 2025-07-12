@@ -1,6 +1,8 @@
 import 'package:grocery/imports.dart';
-import 'package:grocery/views/auth/login_screen.dart';
-import 'package:grocery/views/auth/register_screen.dart';
+import 'package:grocery/views/auth/forget_password/forget_password.dart';
+import 'package:grocery/views/auth/forget_password/otp_verification_screen.dart';
+import 'package:grocery/views/auth/login/login_screen.dart';
+import 'package:grocery/views/auth/register/register_screen.dart';
 
 class AppRoutes {
   static final routes = [
@@ -37,6 +39,18 @@ class AppRoutes {
       transition: Transition.leftToRight,
       transitionDuration: const Duration(milliseconds: 250),
     ),
+    GetPage(
+      name: RouteName.forgotPassword,
+      page: () => const ForgotPassword(),
+      transition: Transition.leftToRight,
+      transitionDuration: const Duration(milliseconds: 250),
+    ),
+    GetPage(
+      name: RouteName.otpScreen,
+      page: () => OtpScreen(),
+      transition: Transition.leftToRight,
+      transitionDuration: const Duration(milliseconds: 250),
+    ),
     // Uncomment and implement these as you create the views
     /*
     GetPage(
@@ -45,12 +59,7 @@ class AppRoutes {
       transition: Transition.leftToRight,
       transitionDuration: const Duration(milliseconds: 250),
     ),
-    GetPage(
-      name: RouteName.forgetPasswordView,
-      page: () => const ForgetPasswordView(),
-      transition: Transition.leftToRight,
-      transitionDuration: const Duration(milliseconds: 250),
-    ),
+  
     GetPage(
       name: RouteName.profileView,
       page: () => const ProfileView(),

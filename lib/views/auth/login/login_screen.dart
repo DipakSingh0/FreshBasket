@@ -1,4 +1,5 @@
 import 'package:grocery/imports.dart';
+import 'package:grocery/views/auth/primary_button.dart';
 
 class LoginScreen extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
@@ -101,42 +102,37 @@ class LoginScreen extends StatelessWidget {
                           },
                         ),
                       ),
-                      const SizedBox(height: 32),
+                      const SizedBox(height: 18),
+
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: GestureDetector(
+                          onTap: () => Get.toNamed('/forgot-password'),
+                          child: const Text(
+                            'forgot password?',
+                            style: TextStyle(
+                              color: AppColors.textPrimary,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 18),
 
                       // Login Button
                       Obx(
-                        () => SizedBox(
-                          width: double.infinity,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: AppColors.textPrimary,
-                              padding: const EdgeInsets.symmetric(vertical: 16),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                            onPressed: authController.isLoading.value
-                                ? null
-                                : () {
-                                    if (_formKey.currentState!.validate()) {
-                                      authController.login(
-                                        _emailController.text.trim(),
-                                        _passwordController.text.trim(),
-                                      );
-                                    }
-                                  },
-                            child: authController.isLoading.value
-                                ? const CircularProgressIndicator(
-                                    color: Colors.white,
-                                  )
-                                : Text(
-                                    'Login',
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                          ),
+                        () => PrimaryButton(
+                          text: 'Login',
+                          isLoading: authController.isLoading.value,
+                          backgroundColor: AppColors.textPrimary,
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              authController.login(
+                                _emailController.text.trim(),
+                                _passwordController.text.trim(),
+                              );
+                            }
+                          },
                         ),
                       ),
 

@@ -1,4 +1,5 @@
 import 'package:grocery/imports.dart';
+import 'package:grocery/views/auth/primary_button.dart';
 
 class RegisterScreen extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
@@ -18,14 +19,29 @@ class RegisterScreen extends StatelessWidget {
         children: [
           Container(
             padding: const EdgeInsets.only(top: 60, left: 24, right: 24),
-            child: Text(
-              // 'Create Account',
-              'Go ahead and set up your Account',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-              ),
+
+            child: Row(
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.arrow_back, color: Colors.white),
+                  onPressed: () => Get.toNamed('/login'),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Center(
+                    child: Text(
+                      // 'Create Account',
+                      'Set up your Account',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 28), // for alignment
+              ],
             ),
           ),
 
@@ -169,39 +185,26 @@ class RegisterScreen extends StatelessWidget {
 
                       // Register Button
                       Obx(
-                        () => SizedBox(
-                          width: double.infinity,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: AppColors.textPrimary,
-                              padding: const EdgeInsets.symmetric(vertical: 16),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                            onPressed: authController.isLoading.value
-                                ? null
-                                : () {
-                                    if (_formKey.currentState!.validate()) {
-                                      authController.register(
-                                        _emailController.text.trim(),
-                                        _passwordController.text.trim(),
-                                        _nameController.text.trim(),
-                                      );
-                                    }
-                                  },
-                            child: authController.isLoading.value
-                                ? const CircularProgressIndicator(
-                                    color: Colors.white,
-                                  )
-                                : Text(
-                                    'Register',
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      color: Colors.white,
-                                    ),
-                                  ),
+                        () => PrimaryButton(
+                          text: 'Register',
+                          isLoading: authController.isLoading.value,
+                          backgroundColor: AppColors.textPrimary,
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              authController.register(
+                                _emailController.text.trim(),
+                                _passwordController.text.trim(),
+                                _nameController.text.trim(),
+                              );
+                            }
+                          },
+                          textStyle: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
                           ),
+                          verticalPadding: 16,
+                          borderRadius: 10,
                         ),
                       ),
 
