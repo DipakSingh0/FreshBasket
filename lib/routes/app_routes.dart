@@ -1,4 +1,6 @@
 import 'package:grocery/imports.dart';
+import 'package:grocery/views/auth/login_screen.dart';
+import 'package:grocery/views/auth/register_screen.dart';
 
 class AppRoutes {
   static final routes = [
@@ -15,20 +17,20 @@ class AppRoutes {
     //   transition: Transition.leftToRight,
     //   transitionDuration: const Duration(milliseconds: 250),
     // ),
-    // GetPage(
-    //   name: RouteName.loginView,
-    //   page: () => LoginScreen(),
-    //   binding: AuthBinding(),
-    //   transition: Transition.leftToRight,
-    //   transitionDuration: const Duration(milliseconds: 250),
-    // ),
-    // GetPage(
-    //   name: RouteName.registerView,
-    //   page: () => RegisterScreen(),
-    //   binding: AuthBinding(),
-    //   transition: Transition.leftToRight,
-    //   transitionDuration: const Duration(milliseconds: 250),
-    // ),
+    GetPage(
+      name: RouteName.loginView,
+      page: () => LoginScreen(),
+      binding: AuthBinding(),
+      transition: Transition.leftToRight,
+      transitionDuration: const Duration(milliseconds: 250),
+    ),
+    GetPage(
+      name: RouteName.registerView,
+      page: () => RegisterScreen(),
+      binding: AuthBinding(),
+      transition: Transition.leftToRight,
+      transitionDuration: const Duration(milliseconds: 250),
+    ),
     GetPage(
       name: RouteName.homePage,
       page: () => const HomePage(),
