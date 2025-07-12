@@ -1,5 +1,4 @@
-// top_categories_controller.dart
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide SearchController;
 import 'package:get/get.dart';
 import 'package:grocery/models/product_model.dart';
 import 'package:grocery/repository/product_repository.dart';

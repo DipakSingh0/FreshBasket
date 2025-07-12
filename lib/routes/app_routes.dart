@@ -1,3 +1,4 @@
+import 'package:grocery/bindings/search_binding.dart';
 import 'package:grocery/imports.dart';
 import 'package:grocery/views/auth/forget_password/forget_password.dart';
 import 'package:grocery/views/auth/forget_password/otp_verification_screen.dart';
@@ -34,12 +35,6 @@ class AppRoutes {
       transitionDuration: const Duration(milliseconds: 250),
     ),
     GetPage(
-      name: RouteName.homePage,
-      page: () => const HomePage(),
-      transition: Transition.leftToRight,
-      transitionDuration: const Duration(milliseconds: 250),
-    ),
-    GetPage(
       name: RouteName.forgotPassword,
       page: () => const ForgotPassword(),
       transition: Transition.leftToRight,
@@ -56,6 +51,11 @@ class AppRoutes {
       page: () => const HomePage(),
       transition: Transition.leftToRight,
       transitionDuration: const Duration(milliseconds: 250),
+    ),
+    GetPage(
+      name: '/home',
+      page: () => const HomePage(),
+      binding: SearchBinding(),
     ),
 
     // Uncomment and implement these as you create the views

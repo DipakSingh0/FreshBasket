@@ -1,6 +1,3 @@
-// category_tabs.dart
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:grocery/controllers/categories_controller.dart';
 import 'package:grocery/imports.dart';
 import 'package:grocery/views/core/home/widgets/product_card.dart';

@@ -13,3 +13,7 @@ export 'package:grocery/controllers/auth_controller.dart';
 export 'package:grocery/utils/image_utils.dart';
 export 'package:grocery/views/core/home/widgets/header_widget.dart';
 export 'package:grocery/views/core/home/widgets/special_offer_card.dart';
+
+export 'package:grocery/models/product_model.dart';
+export 'package:grocery/views/core/home/widgets/category_tabs.dart';
+export 'package:grocery/views/core/home/widgets/product_card.dart';

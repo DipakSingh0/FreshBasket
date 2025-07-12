@@ -227,7 +227,19 @@ class ProductRepository {
     try {
       return _products.firstWhere((product) => product.id == id);
     } catch (e) {
+      // You might want to log the error for debugging
+      print('Product with ID $id not found: $e');
       return null;
     }
+  }
+
+  // Add this method to your existing ProductRepository class
+  List<Product> searchProducts(String query) {
+    if (query.isEmpty) return _products;
+    return _products
+        .where(
+          (product) => product.name.toLowerCase().contains(query.toLowerCase()),
+        )
+        .toList();
   }
 }

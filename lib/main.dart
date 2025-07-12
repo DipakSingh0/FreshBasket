@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:grocery/controllers/categories_controller.dart';
 import 'package:grocery/routes/app_pages.dart';
 import 'package:grocery/routes/app_routes.dart';
 import 'package:grocery/services/translation.dart';
@@ -11,7 +12,7 @@ import 'package:grocery/services/translation.dart';
 // }
 void main() {
   // dont need this because we are using Get.lazyPut in AuthBinding
-  // Get.put(AuthController());
+  Get.put(TopCategoriesController());
   runApp(const MyApp());
 }
 

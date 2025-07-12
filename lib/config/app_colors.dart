@@ -8,7 +8,8 @@ class AppColors {
   static const accent = Color(0xFFFF5252); // Red
   static const textPrimary = Color(0xFF212121);
   static const textSecondary = Color(0xFF757575);
-  static const background = Color(0xFFFAFAFA);
-  static const cardBackground = Colors.white;
+  static const background = Colors.black;
+
+  static const cardBackground = Color.fromARGB(137, 65, 10, 10);
   static const ratingColor = Color(0xFFFFC107); // Amber
 }
