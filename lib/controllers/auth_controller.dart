@@ -14,7 +14,7 @@ class AuthController extends GetxController {
     Future.delayed(const Duration(seconds: 2), () {
       isLoading(false);
       isLoggedIn(true);
-      Get.offAllNamed('/home'); // Navigate to home after login
+      Get.offAllNamed('/homePage'); // Navigate to home after login
     });
   }
 

@@ -1,5 +1,5 @@
 import 'package:grocery/imports.dart';
-import 'package:grocery/views/auth/primary_button.dart';
+import 'package:grocery/views/widgets/common/primary_button.dart';
 
 class LoginScreen extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
@@ -55,7 +55,7 @@ class LoginScreen extends StatelessWidget {
                           labelText: 'Email',
                           prefixIcon: Icon(
                             Icons.email,
-                            color: AppColors.primary,
+                            color: AppColors.textPrimary,
                           ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
@@ -65,6 +65,14 @@ class LoginScreen extends StatelessWidget {
                           if (value == null || value.isEmpty) {
                             return 'Please enter your email';
                           }
+                          final bool emailValid = RegExp(
+                            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
+                          ).hasMatch(value);
+
+                          if (!emailValid) {
+                            return 'Please enter a valid email address';
+                          }
+                          // Return null if the input is valid
                           return null;
                         },
                       ),
@@ -79,7 +87,7 @@ class LoginScreen extends StatelessWidget {
                             labelText: 'Password',
                             prefixIcon: Icon(
                               Icons.lock,
-                              color: AppColors.primary,
+                              color: AppColors.textPrimary,
                             ),
                             suffixIcon: IconButton(
                               icon: Icon(
@@ -97,6 +105,9 @@ class LoginScreen extends StatelessWidget {
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Please enter your password';
+                            }
+                            if (value.length < 6) {
+                              return 'Password must be at least 6 characters long';
                             }
                             return null;
                           },
@@ -125,7 +136,7 @@ class LoginScreen extends StatelessWidget {
                           text: 'Login',
                           isLoading: authController.isLoading.value,
                           backgroundColor: AppColors.textPrimary,
-                          onPressed: () {
+                          onPressed: () async {
                             if (_formKey.currentState!.validate()) {
                               authController.login(
                                 _emailController.text.trim(),

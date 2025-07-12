@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const primary = Color(0xFF009688); // Teal
-  static const primaryDark = Color(0xFF00796B);
+  static const primary = Color.fromARGB(255, 200, 7, 23); // Teal
+  static const primaryDark = Colors.red;
   static const primaryLight = Color(0xFFB2DFDB);
   static const accent = Color(0xFFFF5252); // Red
   static const textPrimary = Color(0xFF212121);

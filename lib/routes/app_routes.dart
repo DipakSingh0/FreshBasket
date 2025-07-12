@@ -51,6 +51,13 @@ class AppRoutes {
       transition: Transition.leftToRight,
       transitionDuration: const Duration(milliseconds: 250),
     ),
+    GetPage(
+      name: RouteName.homePage,
+      page: () => const HomePage(),
+      transition: Transition.leftToRight,
+      transitionDuration: const Duration(milliseconds: 250),
+    ),
+
     // Uncomment and implement these as you create the views
     /*
     GetPage(

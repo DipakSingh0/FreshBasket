@@ -1,4 +1,5 @@
 import 'package:grocery/imports.dart';
+import 'package:grocery/utils/image_utils.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -13,7 +14,8 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Future.delayed(const Duration(seconds: 3), () {
       // Get.off(() => LoginScreen());
-      Get.offNamed(RouteName.loginView);
+      // Get.offNamed(RouteName.loginView);
+      Get.offNamed(RouteName.homePage);
     });
   }
 
@@ -27,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('assets/icons/splash.png', width: 250, height: 250),
+                Image.asset(ImageAssets.splashIcon, width: 250, height: 250),
                 // const SizedBox(height: 10),
                 const Text(
                   'Welcome to FreshBasket',

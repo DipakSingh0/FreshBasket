@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grocery/config/app_colors.dart';
+import 'package:grocery/utils/image_utils.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 void _verifyOtp() {
@@ -93,7 +94,7 @@ class OtpScreen extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        const SizedBox(height: 20),
+                        const SizedBox(height: 40),
                         const Text(
                           'Enter Verification Code',
                           style: TextStyle(
@@ -106,7 +107,7 @@ class OtpScreen extends StatelessWidget {
                           'We have sent a verification code to your email',
                           style: TextStyle(fontSize: 16, color: Colors.grey),
                         ),
-                        const SizedBox(height: 40),
+                        const SizedBox(height: 32),
 
                         // --------- OTP Input Field
                         PinCodeTextField(
@@ -133,7 +134,7 @@ class OtpScreen extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        const SizedBox(height: 32),
+                        const SizedBox(height: 16),
 
                         // ---------Verify Button
                         SizedBox(
@@ -191,15 +192,11 @@ class OtpScreen extends StatelessWidget {
           ),
 
           Positioned(
-            top: 20,
+            top: 0,
             left: 0,
             right: 0,
             child: Center(
-              child: Image.asset(
-                'assets/icons/otp.png',
-                width: 300,
-                height: 300,
-              ),
+              child: Image.asset(ImageAssets.otpIcon, width: 300, height: 300),
             ),
           ),
         ],

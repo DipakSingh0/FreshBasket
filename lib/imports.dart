@@ -9,3 +9,7 @@ export 'package:flutter/material.dart';
 export 'package:get/get.dart';
 export 'package:grocery/config/app_colors.dart';
 export 'package:grocery/controllers/auth_controller.dart';
+
+export 'package:grocery/utils/image_utils.dart';
+export 'package:grocery/views/core/home/widgets/header_widget.dart';
+export 'package:grocery/views/core/home/widgets/special_offer_card.dart';

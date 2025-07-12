@@ -1,5 +1,5 @@
 import 'package:grocery/imports.dart';
-import 'package:grocery/views/auth/primary_button.dart';
+import 'package:grocery/views/widgets/common/primary_button.dart';
 
 class RegisterScreen extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
