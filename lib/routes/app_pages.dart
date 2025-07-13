@@ -7,6 +7,8 @@ class RouteName {
   static const String forgotPassword = '/forgot-password';
   static const String otpScreen = '/otpScreen';
 
+  static const String mainWrapper = '/mainWrapper';
+
   static const String homePage = '/homePage';
   static const String profileView = '/profile';
   static const String settingsView = '/settings';

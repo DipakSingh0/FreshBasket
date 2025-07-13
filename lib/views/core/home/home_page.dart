@@ -47,36 +47,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-
-// class HomePage extends StatelessWidget {
-//   const HomePage({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: const Color(0xFF121212),
-//       body: SafeArea(
-//         child: Column(
-//           children: [
-//             const HeaderWidget(),
-//             const SearchBarWidget(),
-//             const SizedBox(height: 16),
-//             Expanded(
-//               child: DefaultTabController(
-//                 length: 3,
-//                 child: Builder(
-//                   builder: (context) {
-//                     // Initialize binding
-//                     TabBinding().dependencies();
-//                     return const CategoryTabs();
-//                   },
-//                 ),
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }

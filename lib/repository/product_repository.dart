@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:grocery/models/product_model.dart';
 import 'package:grocery/utils/image_utils.dart';
 

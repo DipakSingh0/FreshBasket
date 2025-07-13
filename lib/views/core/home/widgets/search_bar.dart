@@ -93,7 +93,6 @@ class SearchBarWidget extends StatelessWidget {
               child: const Icon(Icons.menu, color: Colors.white, size: 20),
             ),
           ),
-          // ... rest of your filter and menu buttons
         ],
       ),
     );

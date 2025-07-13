@@ -1,5 +1,4 @@
 import 'package:grocery/imports.dart';
-import 'package:grocery/utils/image_utils.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,7 +14,8 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(const Duration(seconds: 3), () {
       // Get.off(() => LoginScreen());
       // Get.offNamed(RouteName.loginView);
-      Get.offNamed(RouteName.homePage);
+      // Get.offNamed(RouteName.homePage);
+      Get.offAllNamed(RouteName.mainWrapper);
     });
   }
 

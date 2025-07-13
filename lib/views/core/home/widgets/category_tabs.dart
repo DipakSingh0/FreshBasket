@@ -1,6 +1,5 @@
 import 'package:grocery/controllers/categories_controller.dart';
 import 'package:grocery/imports.dart';
-import 'package:grocery/views/core/home/widgets/product_card.dart';
 
 class CategoryTabs extends StatefulWidget {
   const CategoryTabs({super.key});

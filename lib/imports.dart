@@ -17,3 +17,9 @@ export 'package:grocery/views/core/home/widgets/special_offer_card.dart';
 export 'package:grocery/models/product_model.dart';
 export 'package:grocery/views/core/home/widgets/category_tabs.dart';
 export 'package:grocery/views/core/home/widgets/product_card.dart';
+
+export 'package:grocery/controllers/bottom_nav_controller.dart';
+export 'package:grocery/views/core/cart_page.dart';
+export 'package:grocery/views/core/profile_page.dart';
+export 'package:grocery/views/core/search_page.dart';
+export 'package:grocery/views/core/widgets/my_bottom_nav_bar.dart';

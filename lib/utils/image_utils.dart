@@ -10,7 +10,7 @@ class ImageAssets {
   static const String explosionIcon = 'assets/icons/explosion.png';
 
   //---------------- Product Images -------------------
-  static const String beetroot = 'assets/images/beetroot1.png';
+  static const String beetroot = 'assets/images/beetroot.png';
   static const String brinjal = 'assets/images/brinjal.png';
   static const String cabbage = 'assets/images/cabbage.png';
   static const String capsicum = 'assets/images/capsicum.png';

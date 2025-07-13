@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:grocery/bindings/bottom_nav_bar_binding.dart';
 import 'package:grocery/controllers/categories_controller.dart';
 import 'package:grocery/routes/app_pages.dart';
 import 'package:grocery/routes/app_routes.dart';
@@ -26,13 +27,14 @@ class MyApp extends StatelessWidget {
       translations: AppTranslations(),
       locale: Locale('en', 'US'),
       fallbackLocale: Locale('en', 'US'),
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.teal,
+        primarySwatch: Colors.red,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       initialRoute: RouteName.splashScreen,
       getPages: AppRoutes.routes,
-      debugShowCheckedModeBanner: false,
+      initialBinding: BottomNavBinding(),
     );
   }
 }
