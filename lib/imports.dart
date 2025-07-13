@@ -19,7 +19,10 @@ export 'package:grocery/views/core/home/widgets/category_tabs.dart';
 export 'package:grocery/views/core/home/widgets/product_card.dart';
 
 export 'package:grocery/controllers/bottom_nav_controller.dart';
-export 'package:grocery/views/core/cart_page.dart';
+export 'package:grocery/views/core/cart/widgets/cart_page.dart';
 export 'package:grocery/views/core/profile_page.dart';
 export 'package:grocery/views/core/search_page.dart';
 export 'package:grocery/views/core/widgets/my_bottom_nav_bar.dart';
+
+export 'package:grocery/bindings/settings_binding.dart';
+export 'package:grocery/controllers/settings_controller.dart';
