@@ -1,6 +1,4 @@
-import 'package:grocery/bindings/bottom_nav_bar_binding.dart';
 import 'package:grocery/imports.dart';
-import 'package:grocery/views/core/settings_page.dart';
 
 class BottomNavBarController extends GetxController {
   final RxInt currentIndex = 0.obs;

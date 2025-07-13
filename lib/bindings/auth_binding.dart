@@ -1,6 +1,6 @@
 // bindings/auth_binding.dart
-import 'package:get/get.dart';
-import 'package:grocery/controllers/auth_controller.dart';
+
+import 'package:grocery/imports.dart';
 
 class AuthBinding implements Bindings {
   @override

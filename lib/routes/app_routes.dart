@@ -1,12 +1,4 @@
-import 'package:grocery/bindings/bottom_nav_bar_binding.dart';
-import 'package:grocery/bindings/search_binding.dart';
 import 'package:grocery/imports.dart';
-import 'package:grocery/views/auth/forget_password/forget_password.dart';
-import 'package:grocery/views/auth/forget_password/otp_verification_screen.dart';
-import 'package:grocery/views/auth/login/login_screen.dart';
-import 'package:grocery/views/auth/register/register_screen.dart';
-import 'package:grocery/views/core/settings_page.dart';
-import 'package:grocery/views/core/widgets/main_wrapper.dart';
 
 class AppRoutes {
   static final routes = [

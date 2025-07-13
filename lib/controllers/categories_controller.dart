@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart' hide SearchController;
-import 'package:get/get.dart';
-import 'package:grocery/models/product_model.dart';
-import 'package:grocery/repository/product_repository.dart';
+import 'package:grocery/imports.dart';
 
 class TopCategoriesController extends GetxController {
   final ProductRepository productRepository = ProductRepository();

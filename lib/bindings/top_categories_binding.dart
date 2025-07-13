@@ -1,5 +1,4 @@
-import 'package:get/get.dart';
-import 'package:grocery/controllers/categories_controller.dart';
+import 'package:grocery/imports.dart';
 
 class TopCategoriesBinding implements Bindings {
   @override

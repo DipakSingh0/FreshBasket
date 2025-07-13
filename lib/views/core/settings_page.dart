@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:grocery/config/app_colors.dart';
-import 'package:grocery/controllers/settings_controller.dart';
+import 'package:grocery/imports.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});

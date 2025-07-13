@@ -1,5 +1,4 @@
 import 'package:grocery/imports.dart';
-import 'package:grocery/repository/product_repository.dart';
 
 class ProductSearchController extends GetxController {
   final ProductRepository _productRepository = ProductRepository();

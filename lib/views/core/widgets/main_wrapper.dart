@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:grocery/controllers/bottom_nav_controller.dart';
-import 'package:grocery/views/core/widgets/my_bottom_nav_bar.dart';
+import 'package:grocery/imports.dart';
 
 class MainWrapper extends StatelessWidget {
   const MainWrapper({super.key});

@@ -1,6 +1,4 @@
-// search_binding.dart
-import 'package:get/get.dart';
-import 'package:grocery/controllers/search_controller.dart';
+import 'package:grocery/imports.dart';
 
 class SearchBinding implements Bindings {
   @override

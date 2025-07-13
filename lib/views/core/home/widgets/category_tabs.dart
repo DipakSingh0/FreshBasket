@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:grocery/controllers/categories_controller.dart';
 import 'package:grocery/imports.dart';
-import 'package:grocery/views/core/home/widgets/sale_card.dart';
 
 class CategoryTabs extends StatefulWidget {
   const CategoryTabs({super.key});
@@ -16,8 +12,12 @@ class _CategoryTabsState extends State<CategoryTabs> {
   final List<String> categories = [
     'Groceries',
     'Vegetables',
-    'Alcohol',
     'Fruits',
+    'Alcohol',
+    'Snacks',
+    'Beverages',
+    'Dairy',
+    'Bakery',
   ];
 
   @override
@@ -71,17 +71,6 @@ class _CategoryTabsState extends State<CategoryTabs> {
       ),
       itemCount: products.length,
       itemBuilder: (context, index) {
-        // For Groceries tab only - show sale cards for sale items
-        if (category == 'Groceries') {
-          final isSaleItem = products[index].category == 'Sale';
-          if (isSaleItem) {
-            final discountPercent = [12.0, 5.0, 15.0, 10.0][index % 4];
-            return SaleProductCard(
-              product: products[index],
-              discountPercent: discountPercent,
-            );
-          }
-        }
         return ProductCard(product: products[index]);
       },
     );

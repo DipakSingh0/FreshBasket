@@ -7,3 +7,6 @@
 //     Get.lazyPut<SettingsController>(() => SettingsController());
 //   }
 // }
+
+// ---- note --  settings is used with bottom nav bar
+//  so it is being initialized in bottom_nav_bar_binding.dart

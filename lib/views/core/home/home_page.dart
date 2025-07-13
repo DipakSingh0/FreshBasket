@@ -1,7 +1,4 @@
-import 'package:grocery/bindings/search_binding.dart';
-import 'package:grocery/controllers/search_controller.dart';
 import 'package:grocery/imports.dart';
-import 'package:grocery/views/core/home/widgets/search_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
