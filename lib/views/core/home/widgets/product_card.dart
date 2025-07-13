@@ -20,7 +20,7 @@ class ProductCard extends StatelessWidget {
         width: 160,
         margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
         decoration: BoxDecoration(
-          color: const Color(0xFF222222), // Dark background color
+          color: const Color(0xFF222222),
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
@@ -50,7 +50,6 @@ class ProductCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-            // Product Image Container with Stack
             Container(
               height: 180,
               margin: const EdgeInsets.symmetric(horizontal: 12),
@@ -59,7 +58,8 @@ class ProductCard extends StatelessWidget {
                   top: Radius.circular(16),
                   bottom: Radius.circular(16),
                 ),
-                color: const Color(0xFF333333),
+                color: AppColors.card,
+                // color: const Color(0xFF333333),
                 // color: Colors.transparent,
               ),
               alignment: Alignment.center,
@@ -87,7 +87,7 @@ class ProductCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    '  \Rs ${product.price.toStringAsFixed(1)} /Kg',
+                    '  Rs ${product.price.toStringAsFixed(1)}/Kg',
                     style: const TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
@@ -98,11 +98,11 @@ class ProductCard extends StatelessWidget {
                     onTap: onAddToCart,
                     child: Container(
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 14,
+                        horizontal: 8,
                         vertical: 6,
                       ),
                       decoration: BoxDecoration(
-                        color: Colors.red, // Red color for "Add to cart" button
+                        color: AppColors.primary,
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: const Text(

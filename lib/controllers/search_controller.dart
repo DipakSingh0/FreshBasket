@@ -22,7 +22,9 @@ class ProductSearchController extends GetxController {
       searchResults.assignAll(
         _productRepository
             .getAllProducts()
-            .where((product) => product.name.toLowerCase().contains(query))
+            .where(
+              (product) => product.name.toLowerCase().startsWith(query),
+            ) // ---starts with for specific name
             .toList(),
       );
     }

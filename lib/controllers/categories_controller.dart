@@ -28,4 +28,8 @@ class TopCategoriesController extends GetxController {
   List<Product> getProductsByCategory(String category) {
     return productRepository.getProductsByCategory(category);
   }
+
+  List<Product> getAllProducts() {
+    return productRepository.getAllProducts();
+  }
 }

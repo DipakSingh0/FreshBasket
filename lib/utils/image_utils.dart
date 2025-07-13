@@ -9,6 +9,12 @@ class ImageAssets {
   static const String loveIcon = 'assets/icons/love.png';
   static const String explosionIcon = 'assets/icons/explosion.png';
 
+  //---------------- Groceries -------------------
+  static const String coffee = 'assets/images/coffee.png';
+  static const String honey = 'assets/images/honey.png';
+  static const String proteinBar = 'assets/images/proteinbar.png';
+  static const String dairymilk = 'assets/images/dairymilk.png';
+
   //---------------- Product Images -------------------
   static const String beetroot = 'assets/images/beetroot.png';
   static const String brinjal = 'assets/images/brinjal.png';
@@ -24,7 +30,7 @@ class ImageAssets {
   static const String potato = 'assets/images/potato.png';
   static const String turnip = 'assets/images/turnip.png';
 
-  //---------------- Details Screen -------------------
+  //---------------- Fruits -------------------
   static const String apple = 'assets/images/apple.png';
   static const String orange = 'assets/images/orange.png';
   static const String grape = 'assets/images/grape.png';

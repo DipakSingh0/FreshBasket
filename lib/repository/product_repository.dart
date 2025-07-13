@@ -212,6 +212,45 @@ class ProductRepository {
       category: 'Fruits',
       unit: 'kg',
     ),
+    Product(
+      id: '24',
+      name: 'Premium Coffee',
+      description: 'Arabica whole beans - Limited offer',
+      price: 199.0, // Original price: 299.0
+      image: ImageAssets.coffee,
+      category: 'Groceries',
+      unit: '200g pack',
+    ),
+    Product(
+      id: '25',
+      name: 'Organic Honey',
+      description: 'Pure forest honey - Special discount',
+      price: 149.0, // Original price: 199.0
+      image: ImageAssets.honey,
+      category: 'Groceries',
+
+      unit: '500g jar',
+    ),
+    Product(
+      id: '26',
+      name: 'Protein Bars',
+      description: 'Low sugar high protein - Bundle offer',
+      price: 99.0, // Original price: 150.0
+      image: ImageAssets.proteinBar,
+      category: 'Groceries',
+
+      unit: '5 bars',
+    ),
+    Product(
+      id: '27',
+      name: 'Dairy Milk Chocolate',
+      description: 'Smooth and creamy chocolate - Buy 1 Get 1 Free',
+      price: 89.0, // Original price: 99.0
+      image: ImageAssets.dairymilk,
+      category: 'Groceries',
+
+      unit: '200g pack',
+    ),
   ];
 
   // Get all products
@@ -229,13 +268,11 @@ class ProductRepository {
     try {
       return _products.firstWhere((product) => product.id == id);
     } catch (e) {
-      // You might want to log the error for debugging
       print('Product with ID $id not found: $e');
       return null;
     }
   }
 
-  // Add this method to your existing ProductRepository class
   List<Product> searchProducts(String query) {
     if (query.isEmpty) return _products;
     return _products

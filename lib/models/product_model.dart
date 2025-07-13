@@ -7,6 +7,7 @@ class Product {
   final String image;
   final String category;
   final String unit;
+  final bool isOnSale;
 
   Product({
     required this.id,
@@ -17,6 +18,7 @@ class Product {
     required this.image,
     required this.category,
     required this.unit,
+    this.isOnSale = false,
   });
 
   // Factory method to create a Product from JSON
