@@ -19,7 +19,7 @@ class LoginScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.only(top: 60, left: 24, right: 24),
             child: Text(
-              'Welcome Back!',
+              'welcome_back'.tr,
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 28,
@@ -52,7 +52,7 @@ class LoginScreen extends StatelessWidget {
                       TextFormField(
                         controller: _emailController,
                         decoration: InputDecoration(
-                          labelText: 'Email',
+                          labelText: 'email'.tr,
                           prefixIcon: Icon(
                             Icons.email,
                             color: AppColors.textPrimary,
@@ -63,16 +63,15 @@ class LoginScreen extends StatelessWidget {
                         ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter your email';
+                            return 'enter_your_email'.tr;
                           }
                           final bool emailValid = RegExp(
                             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
                           ).hasMatch(value);
 
                           if (!emailValid) {
-                            return 'Please enter a valid email address';
+                            return 'enter_valid_email_address'.tr;
                           }
-                          // Return null if the input is valid
                           return null;
                         },
                       ),
@@ -84,7 +83,7 @@ class LoginScreen extends StatelessWidget {
                           controller: _passwordController,
                           obscureText: authController.obscurePassword.value,
                           decoration: InputDecoration(
-                            labelText: 'Password',
+                            labelText: 'password'.tr,
                             prefixIcon: Icon(
                               Icons.lock,
                               color: AppColors.textPrimary,
@@ -104,10 +103,11 @@ class LoginScreen extends StatelessWidget {
                           ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Please enter your password';
+                              return 'enter_your_password'.tr;
                             }
                             if (value.length < 6) {
-                              return 'Password must be at least 6 characters long';
+                              return 'password_must_be_at_least_6_characters'
+                                  .tr;
                             }
                             return null;
                           },
@@ -119,8 +119,8 @@ class LoginScreen extends StatelessWidget {
                         alignment: Alignment.centerRight,
                         child: GestureDetector(
                           onTap: () => Get.toNamed('/forgot-password'),
-                          child: const Text(
-                            'forgot password?',
+                          child: Text(
+                            'forgot_password'.tr,
                             style: TextStyle(
                               color: AppColors.textPrimary,
                               fontSize: 16,
@@ -133,7 +133,7 @@ class LoginScreen extends StatelessWidget {
                       // Login Button
                       Obx(
                         () => PrimaryButton(
-                          text: 'Login',
+                          text: 'login'.tr,
                           isLoading: authController.isLoading.value,
                           backgroundColor: AppColors.textPrimary,
                           onPressed: () async {
@@ -150,14 +150,14 @@ class LoginScreen extends StatelessWidget {
                       const SizedBox(height: 16),
 
                       // "Or login with" divider
-                      const Padding(
+                      Padding(
                         padding: EdgeInsets.symmetric(vertical: 24),
                         child: Row(
                           children: [
                             Expanded(child: Divider()),
                             Padding(
                               padding: EdgeInsets.symmetric(horizontal: 8),
-                              child: Text('Or login with'),
+                              child: Text('or_continue_with'.tr),
                             ),
                             Expanded(child: Divider()),
                           ],
@@ -173,7 +173,7 @@ class LoginScreen extends StatelessWidget {
                           // Google button
                           IconButton(
                             icon: Image.asset(
-                              'assets/icons/google.png',
+                              ImageAssets.googleIcon,
                               width: 40,
                             ),
                             onPressed: () => null,
@@ -183,7 +183,7 @@ class LoginScreen extends StatelessWidget {
 
                           // Facebook button
                           IconButton(
-                            icon: Image.asset('assets/icons/fb.png', width: 40),
+                            icon: Image.asset(ImageAssets.fbIcon, width: 40),
                             onPressed: () => null,
                             // authController.socialLogin('facebook'),
                           ),
@@ -197,7 +197,7 @@ class LoginScreen extends StatelessWidget {
                         child: TextButton(
                           onPressed: () => Get.toNamed('/register'),
                           child: Text(
-                            'Don\'t have an account? Register',
+                            'dont_have_an_account'.tr,
                             style: TextStyle(color: AppColors.textPrimary),
                           ),
                         ),

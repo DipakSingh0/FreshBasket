@@ -17,10 +17,10 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
   String? _validateEmail(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Please enter your email';
+      return 'please_enter_your_email'.tr;
     }
     if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(value)) {
-      return 'Please enter a valid email address';
+      return 'please_enter_valid_email_address'.tr;
     }
     return null;
   }
@@ -33,8 +33,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
       Get.showSnackbar(
         GetSnackBar(
-          title: 'OTP Sent',
-          message: 'OTP is being sent to your email',
+          title: 'otp_sent'.tr,
+          message: 'otp_is_being_sent_to_your_email'.tr,
           duration: const Duration(seconds: 2),
           snackPosition: SnackPosition.TOP,
           backgroundColor: Colors.green,
@@ -114,16 +114,16 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     child: Column(
                       children: [
                         const SizedBox(height: 20),
-                        const Text(
-                          'Reset Your Password!',
+                        Text(
+                          'reset_your_password'.tr,
                           style: TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         const SizedBox(height: 16),
-                        const Text(
-                          'Enter Your Mail Id to Reset your Password',
+                        Text(
+                          'enter_your_email_to_reset_password'.tr,
                           style: TextStyle(fontSize: 16, color: Colors.grey),
                         ),
                         const SizedBox(height: 40),
@@ -136,7 +136,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                               TextFormField(
                                 controller: _emailController,
                                 decoration: InputDecoration(
-                                  labelText: 'Email',
+                                  labelText: 'email'.tr,
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(12),
                                   ),
@@ -149,7 +149,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                               // ------ Reset Password Button
                               PrimaryButton(
                                 onPressed: _submitForm,
-                                text: "Get Password",
+                                text: "get_otp".tr,
                                 isLoading: false,
                                 backgroundColor: AppColors.textPrimary,
                                 textStyle: const TextStyle(

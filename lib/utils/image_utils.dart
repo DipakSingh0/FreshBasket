@@ -3,6 +3,8 @@ class ImageAssets {
   static const String splashIcon = 'assets/icons/splash.png';
   static const String forgotPasswordIcon = 'assets/icons/forgetpassword.png';
   static const String otpIcon = 'assets/icons/otp.png';
+  static const String googleIcon = 'assets/icons/google.png';
+  static const String fbIcon = 'assets/icons/fb.png';
 
   //---------------- Home Screen -------------------
   static const String coolIcon = 'assets/icons/cool.png';

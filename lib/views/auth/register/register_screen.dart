@@ -31,7 +31,7 @@ class RegisterScreen extends StatelessWidget {
                   child: Center(
                     child: Text(
                       // 'Create Account',
-                      'Set up your Account',
+                      'setup_your_account'.tr,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 28,
@@ -69,7 +69,7 @@ class RegisterScreen extends StatelessWidget {
                       TextFormField(
                         controller: _nameController,
                         decoration: InputDecoration(
-                          labelText: 'Full Name',
+                          labelText: 'full_name'.tr,
                           prefixIcon: Icon(
                             Icons.person,
                             color: AppColors.primary,
@@ -80,7 +80,7 @@ class RegisterScreen extends StatelessWidget {
                         ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter your name';
+                            return 'please_enter_your_name'.tr;
                           }
                           return null;
                         },
@@ -91,7 +91,7 @@ class RegisterScreen extends StatelessWidget {
                       TextFormField(
                         controller: _emailController,
                         decoration: InputDecoration(
-                          labelText: 'Email',
+                          labelText: 'email'.tr,
                           prefixIcon: Icon(
                             Icons.email,
                             color: AppColors.primary,
@@ -102,10 +102,10 @@ class RegisterScreen extends StatelessWidget {
                         ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter your email';
+                            return 'please_enter_your_email'.tr;
                           }
                           if (!GetUtils.isEmail(value)) {
-                            return 'Please enter a valid email';
+                            return 'please_enter_valid_email_address'.tr;
                           }
                           return null;
                         },
@@ -118,7 +118,7 @@ class RegisterScreen extends StatelessWidget {
                           controller: _passwordController,
                           obscureText: authController.obscurePassword.value,
                           decoration: InputDecoration(
-                            labelText: 'Password',
+                            labelText: 'password'.tr,
                             prefixIcon: Icon(
                               Icons.lock,
                               color: AppColors.primary,
@@ -138,10 +138,11 @@ class RegisterScreen extends StatelessWidget {
                           ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Please enter your password';
+                              return 'enter_your_password'.tr;
                             }
                             if (value.length < 6) {
-                              return 'Password must be at least 6 characters';
+                              return 'password_must_be_at_least_6_characters'
+                                  .tr;
                             }
                             return null;
                           },
@@ -155,7 +156,7 @@ class RegisterScreen extends StatelessWidget {
                           controller: _confirmPasswordController,
                           obscureText: authController.obscurePassword.value,
                           decoration: InputDecoration(
-                            labelText: 'Confirm Password',
+                            labelText: 'confirm_password'.tr,
                             prefixIcon: Icon(
                               Icons.lock_outline,
                               color: AppColors.primary,
@@ -175,7 +176,7 @@ class RegisterScreen extends StatelessWidget {
                           ),
                           validator: (value) {
                             if (value != _passwordController.text) {
-                              return 'Passwords do not match';
+                              return 'passwords_do_not_match'.tr;
                             }
                             return null;
                           },
@@ -186,7 +187,7 @@ class RegisterScreen extends StatelessWidget {
                       // Register Button
                       Obx(
                         () => PrimaryButton(
-                          text: 'Register',
+                          text: 'register'.tr,
                           isLoading: authController.isLoading.value,
                           backgroundColor: AppColors.textPrimary,
                           onPressed: () {
@@ -215,7 +216,7 @@ class RegisterScreen extends StatelessWidget {
                         child: TextButton(
                           onPressed: () => Get.toNamed('/login'),
                           child: Text(
-                            'Already have an account? Login',
+                            'already_have_account'.tr,
                             style: TextStyle(color: AppColors.textPrimary),
                           ),
                         ),

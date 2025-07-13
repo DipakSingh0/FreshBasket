@@ -7,17 +7,17 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 void _verifyOtp() {
   String otp = Get.find<OtpScreen>()._otpController.text;
   if (otp.length == 6) {
-    Get.snackbar('OTP Verification', 'OTP $otp verified successfully!');
+    Get.snackbar('otp_verification'.tr, 'OTP $otp verified successfully!');
   } else {
-    Get.snackbar('Error', 'Please enter a valid 6-digit OTP.');
+    Get.snackbar('error'.tr, 'please_enter_6_digit_valid_otp'.tr);
   }
 }
 
 void _resendOtp() {
   Get.showSnackbar(
     GetSnackBar(
-      title: 'Resend OTP',
-      message: 'OTP has been resent to your email.',
+      title: 'resent_otp'.tr,
+      message: 'otp_has_been_resent_to_your_email'.tr,
       duration: const Duration(seconds: 2),
       snackPosition: SnackPosition.TOP,
       backgroundColor: Colors.green,
@@ -95,16 +95,16 @@ class OtpScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         const SizedBox(height: 40),
-                        const Text(
-                          'Enter Verification Code',
+                        Text(
+                          'enter_verification_code'.tr,
                           style: TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         const SizedBox(height: 16),
-                        const Text(
-                          'We have sent a verification code to your email',
+                        Text(
+                          'we_have_sent_verification_code_to_your_email'.tr,
                           style: TextStyle(fontSize: 16, color: Colors.grey),
                         ),
                         const SizedBox(height: 32),
@@ -148,8 +148,8 @@ class OtpScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(12),
                               ),
                             ),
-                            child: const Text(
-                              'Verify OTP',
+                            child: Text(
+                              'verify_otp'.tr,
                               style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.white,
@@ -164,8 +164,8 @@ class OtpScreen extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Text(
-                              "Didn't receive code?",
+                            Text(
+                              "did_not_receive_code".tr,
                               style: TextStyle(
                                 fontSize: 16,
                                 color: Colors.grey,
@@ -174,7 +174,7 @@ class OtpScreen extends StatelessWidget {
                             TextButton(
                               onPressed: _resendOtp,
                               child: Text(
-                                "Resend",
+                                "resend_code".tr,
                                 style: TextStyle(
                                   fontSize: 16,
                                   color: AppColors.textPrimary,

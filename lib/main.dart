@@ -22,8 +22,13 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Grocery App',
       translations: AppTranslations(),
-      locale: Locale('en', 'US'),
-      fallbackLocale: Locale('en', 'US'),
+      // locale: Locale('en', 'US'),
+      // ---seting default language to nepali
+      locale: Locale('ne', 'NP'),
+
+      // fallbackLocale: Locale('en', 'US'),
+      // ---seting default language to nepali
+      fallbackLocale: Locale('ne', 'NP'),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.red,

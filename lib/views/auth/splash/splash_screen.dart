@@ -13,9 +13,8 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Future.delayed(const Duration(seconds: 3), () {
       // Get.off(() => LoginScreen());
-      // Get.offNamed(RouteName.loginView);
-      // Get.offNamed(RouteName.homePage);
-      Get.offAllNamed(RouteName.mainWrapper);
+      Get.offNamed(RouteName.loginView);
+      // Get.offAllNamed(RouteName.mainWrapper);
     });
   }
 
@@ -31,8 +30,8 @@ class _SplashScreenState extends State<SplashScreen> {
               children: [
                 Image.asset(ImageAssets.splashIcon, width: 250, height: 250),
                 // const SizedBox(height: 10),
-                const Text(
-                  'Welcome to FreshBasket',
+                Text(
+                  'welcome'.tr,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 26,
@@ -42,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  'Delivering fresh groceries\nat your doorstep — fast & easy',
+                  'delivering'.tr,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white70,
