@@ -48,24 +48,25 @@ class AppRoutes {
       transitionDuration: const Duration(milliseconds: 250),
     ),
     GetPage(
-      name: '/home',
-      page: () => const HomePage(),
-      binding: SearchBinding(),
-    ),
-    GetPage(
       name: RouteName.mainWrapper,
       page: () => const MainWrapper(),
       binding: BottomNavBinding(),
     ),
     // GetPage(
-    //   name: RouteName.settingsView,
-    //   page: () => SettingsPage(),
-    //   binding: SettingsBinding(),
+    //   name: RouteName.cartPage,
+    //   page: () => const CartPage(),
+    //   binding: BottomNavBinding(),
     //   transition: Transition.leftToRight,
     //   transitionDuration: const Duration(milliseconds: 250),
     // ),
+    GetPage(
+      name: RouteName.settingsView,
+      page: () => SettingsPage(),
+      binding: BottomNavBinding(),
+      transition: Transition.leftToRight,
+      transitionDuration: const Duration(milliseconds: 250),
+    ),
 
-    // Uncomment and implement these as you create the views
     /*
     GetPage(
       name: RouteName.registerView,

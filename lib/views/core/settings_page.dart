@@ -1,4 +1,5 @@
 import 'package:grocery/imports.dart';
+import 'package:grocery/themes/theme_service.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -6,103 +7,121 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<SettingsController>();
+    final themeService = Get.find<ThemeService>();
 
     return Scaffold(
-      backgroundColor: AppColors.background,
+      backgroundColor: themeService.backgroundColor,
       appBar: AppBar(
-        title: const Text('Settings', style: TextStyle(color: Colors.white)),
+        title: Text(
+          'settings'.tr,
+          style: TextStyle(
+            color: themeService.textColor,
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
         centerTitle: true,
-        backgroundColor: AppColors.background,
-        // leading: IconButton(
-        //   icon: const Icon(Icons.arrow_back, color: Colors.white),
-        //   onPressed: () => Get.back(),
-        // ),
+        backgroundColor: themeService.backgroundColor,
+        elevation: 0,
+        iconTheme: IconThemeData(color: themeService.iconColor),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            // User Info Card
+            // User Profile Card
             Card(
-              color: AppColors.card,
+              color: themeService.cardColor,
+              elevation: 2,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
               ),
               child: ListTile(
                 leading: const CircleAvatar(
+                  radius: 30,
                   backgroundImage: NetworkImage(
                     'https://i.pravatar.cc/150?img=3',
                   ),
-                  radius: 25,
                 ),
-                title: const Text(
+                title: Text(
                   'Muhammad Ali',
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(
+                    color: themeService.textColor,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-                subtitle: const Text(
+                subtitle: Text(
                   'muhammad.ali@example.com',
-                  style: TextStyle(color: Colors.white),
-                ),
-                trailing: const Icon(Icons.edit, color: Colors.white),
-              ),
-            ),
-
-            const SizedBox(height: 16),
-
-            // Card 1: My Account, Orders, Payments, Favourites
-            Card(
-              color: AppColors.card,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Column(
-                children: [
-                  _buildSettingTile(Icons.person, 'My Account'),
-                  _buildSettingTile(Icons.shopping_bag, 'My Orders'),
-                  _buildSettingTile(Icons.payment, 'Payments'),
-                  _buildSettingTile(Icons.favorite, 'Favourites'),
-                ],
-              ),
-            ),
-
-            const SizedBox(height: 16),
-
-            // Card 2: Dark Mode Toggle
-            Card(
-              color: AppColors.card,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Obx(
-                () => SwitchListTile(
-                  value: controller.isDarkMode.value,
-                  onChanged: controller.toggleDarkMode,
-                  title: const Text(
-                    'Dark Mode',
-                    style: TextStyle(color: Colors.white),
+                  style: TextStyle(
+                    color: themeService.textColor.withOpacity(0.7),
+                    fontSize: 14,
                   ),
-                  secondary: const Icon(Icons.dark_mode, color: Colors.white),
                 ),
+                trailing: Icon(Icons.edit, color: themeService.iconColor),
               ),
             ),
+            const SizedBox(height: 20),
 
-            const SizedBox(height: 16),
+            // Account Settings
+            _buildSectionCard(
+              themeService,
+              title: 'account_settings'.tr,
+              items: [
+                _buildSettingTile(Icons.person_outline, 'my_account'.tr),
+                _buildSettingTile(Icons.shopping_bag_outlined, 'my_orders'.tr),
+                _buildSettingTile(Icons.payment_outlined, 'payments'.tr),
+                _buildSettingTile(Icons.favorite_outline, 'favourites'.tr),
+              ],
+            ),
+            const SizedBox(height: 20),
 
-            // Card 3: Help, Terms & Conditions
-            Card(
-              color: AppColors.card,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Column(
-                children: [
-                  _buildSettingTile(Icons.help_outline, 'Help'),
-                  _buildSettingTile(
-                    Icons.privacy_tip_outlined,
-                    'Terms & Conditions',
+            // App Settings
+            _buildSectionCard(
+              themeService,
+              title: 'app_settings'.tr,
+              items: [
+                Obx(
+                  () => ListTile(
+                    leading: Icon(
+                      controller.isDarkMode.value
+                          ? Icons.light_mode_outlined
+                          : Icons.dark_mode_outlined,
+                      color: themeService.iconColor,
+                    ),
+                    title: Text(
+                      controller.modeText,
+                      style: TextStyle(color: themeService.textColor),
+                    ),
+                    trailing: Switch(
+                      value: controller.isDarkMode.value,
+                      onChanged: controller.toggleDarkMode,
+                      activeColor: themeService.backgroundColor,
+                      inactiveThumbColor: Colors.green,
+                    ),
                   ),
-                ],
-              ),
+                ),
+                _buildSettingTile(
+                  Icons.notifications_outlined,
+                  'notifications'.tr,
+                ),
+                _buildSettingTile(Icons.language_outlined, 'language'.tr),
+              ],
+            ),
+            const SizedBox(height: 20),
+
+            // Support
+            _buildSectionCard(
+              themeService,
+              title: 'support'.tr,
+              items: [
+                _buildSettingTile(Icons.help_outline, 'help_center'.tr),
+                _buildSettingTile(
+                  Icons.privacy_tip_outlined,
+                  'terms_conditions'.tr,
+                ),
+                _buildSettingTile(Icons.info_outline, 'about_app'.tr),
+              ],
             ),
           ],
         ),
@@ -110,14 +129,44 @@ class SettingsPage extends StatelessWidget {
     );
   }
 
-  ListTile _buildSettingTile(IconData icon, String title) {
+  Widget _buildSectionCard(
+    ThemeService themeService, {
+    required String title,
+    required List<Widget> items,
+  }) {
+    return Card(
+      color: themeService.cardColor,
+      elevation: 2,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
+            child: Text(
+              title,
+              style: TextStyle(
+                color: themeService.textColor.withOpacity(0.7),
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+          ...items,
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSettingTile(IconData icon, String title) {
+    final themeService = Get.find<ThemeService>();
+
     return ListTile(
-      leading: Icon(icon, color: Colors.white),
-      title: Text(title, style: const TextStyle(color: Colors.white)),
-      trailing: const Icon(
-        Icons.arrow_forward_ios,
-        color: Colors.white,
-        size: 16,
+      leading: Icon(icon, color: themeService.iconColor),
+      title: Text(title, style: TextStyle(color: themeService.textColor)),
+      trailing: Icon(
+        Icons.chevron_right,
+        color: themeService.iconColor.withOpacity(0.5),
       ),
       onTap: () {
         // Handle navigation

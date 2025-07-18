@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:grocery/config/app_colors.dart';
-import 'package:grocery/utils/image_utils.dart';
+import 'package:grocery/imports.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 void _verifyOtp() {

@@ -57,6 +57,20 @@ class AppTranslations extends Translations {
           'We have sent you a verification code to your email',
       'did_not_receive_code': 'Didn\'t receive the code?',
       'resend_code': 'Resend Code',
+
+      //----------------Homepage-----------------//
+      "california_usa": 'California, USA',
+
+      //----------------Settings-----------------//
+      "settings": "Settings",
+
+      "my_account": "My Account",
+      "my_orders": "My Orders",
+      "payments": "Payments",
+      "favourites": "Favourites",
+      "dark_mode": "Dark Mode",
+      "help": "Help",
+      "terms_conditions": "Terms & Conditions",
     },
 
     'es_ES': {
@@ -118,6 +132,19 @@ class AppTranslations extends Translations {
       'resend_code': 'Reenviar código',
       'we_have_sent_verification_code_to_your_email':
           'Te hemos enviado un código de verificación a tu correo electrónico',
+
+      //----------------Homepage-----------------//
+      "california_usa": 'California, EE. UU.',
+
+      //-----------------Settings-----------------//
+      "settings": "Configuraciones",
+      "my_account": "Mi cuenta",
+      "my_orders": "Mis pedidos",
+      "payments": "Pagos",
+      "favourites": "Favoritos",
+      "dark_mode": "Modo oscuro",
+      "help": "Ayuda",
+      "terms_conditions": "Términos y condiciones",
     },
 
     'ne_NP': {
@@ -174,6 +201,20 @@ class AppTranslations extends Translations {
       'resend_code': 'कोड पुन: पठाउनुहोस्',
       'we_have_sent_verification_code_to_your_email':
           'हामीले तपाईंको इमेलमा प्रमाणीकरण कोड पठाएका छौं',
+
+      //----------Homepage----------------//
+      "california_usa": 'क्यालिफोर्निया, अमेरिका',
+
+      //----------------Settings-----------------//
+      "settings": "सेटिङहरू",
+      "my_account": "मेरो खाता",
+      "my_orders": "मेरो अर्डरहरू",
+      "payments": "भुक्तानीहरू",
+
+      "favourites": "पसन्दीदा",
+      "dark_mode": "डार्क मोड",
+      "help": "मद्दत",
+      "terms_conditions": "नियम र सर्तहरू",
     },
   };
 }

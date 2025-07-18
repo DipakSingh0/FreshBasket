@@ -1,5 +1,5 @@
 import 'package:grocery/imports.dart';
-import 'package:grocery/views/widgets/common/primary_button.dart';
+// import 'package:grocery/views/widgets/common/primary_button.dart';
 
 class LoginScreen extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
@@ -48,7 +48,7 @@ class LoginScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const SizedBox(height: 32),
-                      // Email Field
+                      // --------- Email Field
                       TextFormField(
                         controller: _emailController,
                         decoration: InputDecoration(
@@ -77,7 +77,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 20),
 
-                      // Password Field
+                      //------------ Password Field
                       Obx(
                         () => TextFormField(
                           controller: _passwordController,
@@ -130,7 +130,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 18),
 
-                      // Login Button
+                      //-------- Login Button
                       Obx(
                         () => PrimaryButton(
                           text: 'login'.tr,
@@ -149,7 +149,7 @@ class LoginScreen extends StatelessWidget {
 
                       const SizedBox(height: 16),
 
-                      // "Or login with" divider
+                      // ----- "Or login with" divider
                       Padding(
                         padding: EdgeInsets.symmetric(vertical: 24),
                         child: Row(

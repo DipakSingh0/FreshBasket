@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:grocery/routes/app_pages.dart';
 
 class AuthController extends GetxController {
   var isLoading = false.obs;
@@ -14,7 +15,7 @@ class AuthController extends GetxController {
     Future.delayed(const Duration(seconds: 2), () {
       isLoading(false);
       isLoggedIn(true);
-      Get.offAllNamed('/homePage'); // Navigate to home after login
+      Get.offAllNamed(RouteName.mainWrapper); // Navigate to home after login
     });
   }
 

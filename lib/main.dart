@@ -1,16 +1,12 @@
 import 'package:grocery/imports.dart';
 import 'package:grocery/routes/app_routes.dart';
 import 'package:grocery/services/translation.dart';
+import 'package:grocery/themes/theme_service.dart';
 
-// void main() async {
-//   await GetStorage.init();
-//   Get.put(CartService());
-//   runApp(const MyApp());
-// }
-void main() {
-  // dont need this because we are using Get.lazyPut in AuthBinding
+void main() async {
+  await GetStorage.init();
+  Get.put(ThemeService());
   Get.put(TopCategoriesController());
-  // Get.put(SettingsController())
   runApp(const MyApp());
 }
 
@@ -22,18 +18,18 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Grocery App',
       translations: AppTranslations(),
-      // locale: Locale('en', 'US'),
-      // ---seting default language to nepali
-      locale: Locale('ne', 'NP'),
-
-      // fallbackLocale: Locale('en', 'US'),
-      // ---seting default language to nepali
-      fallbackLocale: Locale('ne', 'NP'),
+      // ---seting default language to english
+      locale: Locale('en', 'US'),
+      fallbackLocale: Locale('en', 'US'),
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      // theme: AppTheme.lightTheme,
+      // darkTheme: AppTheme.darkTheme,
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+
+      // themeMode: ThemeService().theme,  // -- will create a new instance of ThemeService
+      themeMode:
+          Get.find<ThemeService>().theme, // -- find existing theme instance
       initialRoute: RouteName.splashScreen,
       getPages: AppRoutes.routes,
       initialBinding: BottomNavBinding(),

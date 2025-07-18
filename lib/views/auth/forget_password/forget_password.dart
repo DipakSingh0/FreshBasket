@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:grocery/config/app_colors.dart';
-import 'package:grocery/utils/image_utils.dart';
-import 'package:grocery/views/widgets/common/primary_button.dart';
+import 'package:grocery/imports.dart';
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({super.key});

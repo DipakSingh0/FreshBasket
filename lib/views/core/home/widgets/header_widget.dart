@@ -1,5 +1,7 @@
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 import 'package:grocery/imports.dart';
+// import 'package:grocery/services/theme_service.dart';
+import 'package:grocery/themes/theme_service.dart';
 
 class HeaderWidget extends StatelessWidget {
   const HeaderWidget({super.key});
@@ -49,8 +51,8 @@ class HeaderWidget extends StatelessWidget {
                         size: 16,
                       ),
                       const SizedBox(width: 4),
-                      const Text(
-                        'California, USA',
+                      Text(
+                        'california_usa'.tr,
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 14,
@@ -70,37 +72,63 @@ class HeaderWidget extends StatelessWidget {
             ],
           ),
           // Cart Icon with Badge
-          Stack(
+          Row(
             children: [
-              Container(
-                padding: const EdgeInsets.all(8),
-                child: const Icon(
-                  Icons.shopping_cart_outlined,
-                  color: Colors.white,
-                  size: 24,
-                ),
+              IconButton(
+                icon: Icon(Icons.language),
+                onPressed: () {
+                  Locale current = Get.locale ?? Locale('en', 'US');
+
+                  if (current == Locale('en', 'US')) {
+                    Get.updateLocale(Locale('es', 'ES'));
+                  } else if (current == Locale('es', 'ES')) {
+                    Get.updateLocale(Locale('hi', 'IN'));
+                  } else if (current == Locale('hi', 'IN')) {
+                    Get.updateLocale(Locale('ne', 'NP'));
+                  } else {
+                    Get.updateLocale(Locale('en', 'US'));
+                  }
+                },
               ),
-              Positioned(
-                right: 4,
-                top: 4,
-                child: Container(
-                  width: 18,
-                  height: 18,
-                  decoration: const BoxDecoration(
-                    color: Colors.red,
-                    shape: BoxShape.circle,
+              // IconButton(
+              //   onPressed: () {
+              //     ThemeService().switchTheme();
+              //   },
+              //   icon: Icon(Icons.brightness_6),
+              // ),
+              Stack(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(8),
+                    child: const Icon(
+                      Icons.shopping_cart_outlined,
+                      color: Colors.white,
+                      size: 24,
+                    ),
                   ),
-                  child: const Center(
-                    child: Text(
-                      '2',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 10,
-                        fontWeight: FontWeight.bold,
+                  Positioned(
+                    right: 4,
+                    top: 4,
+                    child: Container(
+                      width: 18,
+                      height: 18,
+                      decoration: const BoxDecoration(
+                        color: Colors.red,
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Center(
+                        child: Text(
+                          '2',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                ),
+                ],
               ),
             ],
           ),

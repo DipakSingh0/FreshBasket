@@ -4,10 +4,10 @@ class BottomNavBarController extends GetxController {
   final RxInt currentIndex = 0.obs;
   final PageStorageBucket bucket = PageStorageBucket();
 
-  BottomNavBarController() {
-    // Ensure SettingsController is registered
-    BottomNavBinding().dependencies();
-  }
+  // BottomNavBarController() {
+  //   // Ensure SettingsController is registered
+  //   BottomNavBinding().dependencies();
+  // }
 
   final List<Widget> pages = [
     const HomePage(key: PageStorageKey('HomePage')),
